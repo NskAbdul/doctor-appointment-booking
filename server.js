@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); base
 
 // Ensure these models are correctly imported
 const User = require('./models/User');
