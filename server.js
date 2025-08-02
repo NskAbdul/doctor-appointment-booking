@@ -110,9 +110,9 @@ const loginUser = async (req, res, expectedRole = null) => {
         );
 
     } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
-    }
+    console.error(err.message);
+    res.status(500).json({ msg: 'Server error. Check server logs.' });
+}
 };
 
 
@@ -387,8 +387,8 @@ app.post('/api/patient/register', async (req, res) => {
             });
             return res.status(400).json({ msg: 'Validation Error', errors });
         }
-        // For all other errors, send a generic server error
-        res.status(500).send('Server error');
+        // For all other errors, 
+        res.status(500).json({ msg: 'Server error. Check server logs for details.' });
     }
 });
 // Patient Login Route
